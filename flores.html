@@ -1,20 +1,33 @@
-on:
-  push:
-    branches:
-      - main
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 Flores Amarillas</title>
+  <style>
+    .flower {
+      width: 50px;
+      height: 50px;
+      background-color: yellow;
+      border-radius: 50%;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>12 Flores Amarillas</h1>
+  <div id="flowers-container">
+    <!-- JavaScript añadirá las flores aquí -->
+  </div>
 
-jobs:
-  create_flowers:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Clonar repositorio
-      uses: actions/checkout@v2
-
-    - name: Crear flores amarillas
-      run: |
-        for i in {1..12}; do
-          echo "Creando flor amarilla $i"
-          # Aquí agregarías el código para crear una flor amarilla
-        done
-
+  <script>
+    // Crear 12 flores amarillas
+    const flowersContainer = document.getElementById('flowers-container');
+    for (let i = 0; i < 12; i++) {
+      const flower = document.createElement('div');
+      flower.className = 'flower';
+      flowersContainer.appendChild(flower);
+    }
+  </script>
+</body>
+</html>
