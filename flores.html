@@ -15,7 +15,7 @@
 <body>
 
     <div class="Contenedor-Binicio">
-        <button class="Button" id="BVer">Click aquí</button>
+        <button class="Button" id="BVer"> Clicka aqui </button>
     </div>
 
     <div class="Con-Emergente">
@@ -29,34 +29,54 @@
     </div>
 
     <div class="Con-2">
-        <h1 id="Titulo">Elige una Opción</h1>
+        <h1 id="Titulo"> Elije una Opcion </h1>
         <div class="Con">
-            <button class="Button" id="B1">1 Flor</button>
-            <button class="Button" id="B12">12 Flores :)</button>
+            <button class="Button" id="B1"> 1 Flor </button>
+            <button class="Button" id="B12"> 12 Flores :) </button>
         </div>
     </div>
 
     <main class="Contenedor">
-        <canvas id="Flor" class="Flor" width="800" height="600"></canvas>
+        <canvas id="FlorCanvas" class="Flor" width="800" height="600"></canvas>
 
         <div class="Texto">
-            <h2 id="Text">Para la niña más linda del mundo.</h2>
+            <h2 id="Text">Para la niña mas Linda del Mundo.</h2>
         </div>
 
     </main>
 
-    <script src="Js/app.js"></script>
-    <script src="Js/Dis.js"></script>
-
     <script>
-        // Ejemplo de acción para los botones
-        document.getElementById('B1').addEventListener('click', function() {
-            alert('Has elegido 1 Flor');
-        });
+        // Obtener el canvas y su contexto
+        const canvas = document.getElementById('FlorCanvas');
+        const ctx = canvas.getContext('2d');
 
-        document.getElementById('B12').addEventListener('click', function() {
-            alert('Has elegido 12 Flores :)');
-        });
+        // Dibujar una flor amarilla en las coordenadas (x, y)
+        function drawFlower(x, y) {
+            ctx.beginPath();
+            ctx.fillStyle = 'yellow';
+            ctx.arc(x, y, 20, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'orange';
+            ctx.arc(x, y, 10, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'red';
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        // Crear 12 flores amarillas en posiciones aleatorias
+        for (let i = 0; i < 12; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            drawFlower(x, y);
+        }
     </script>
 </body>
 </html>
