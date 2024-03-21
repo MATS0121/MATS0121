@@ -8,9 +8,33 @@
     .flower {
       width: 50px;
       height: 50px;
+      position: relative;
+      margin: 5px;
+    }
+    .flower::before, .flower::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
       background-color: yellow;
       border-radius: 50%;
-      margin: 5px;
+    }
+    .flower::before {
+      top: -5px;
+      left: 15px;
+    }
+    .flower::after {
+      top: 15px;
+      left: -5px;
+    }
+    .flower-center {
+      width: 10px;
+      height: 10px;
+      background-color: yellow;
+      border-radius: 50%;
+      position: absolute;
+      top: 20px;
+      left: 20px;
     }
   </style>
 </head>
@@ -26,6 +50,9 @@
     for (let i = 0; i < 12; i++) {
       const flower = document.createElement('div');
       flower.className = 'flower';
+      const center = document.createElement('div');
+      center.className = 'flower-center';
+      flower.appendChild(center);
       flowersContainer.appendChild(flower);
     }
   </script>
