@@ -24,6 +24,4 @@ Puedes ver una demostración en vivo del proyecto [aquí](https://github.com/MAT
 
 1. Clona este repositorio en tu máquina local:
 
-```bash
-git clone https://github.com/edu5975/flores-amarillas.git
-```
+
