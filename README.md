@@ -18,7 +18,7 @@ Este es un proyecto que muestra flores animadas que aparecen y desaparecen de fo
 
 ## Demostración
 
-Puedes ver una demostración en vivo del proyecto [aquí](https://MATS0121.github.io/MATS0121).
+Puedes ver una demostración en vivo del proyecto [aquí](https://github.com/MATS0121).
 
 ## Instrucciones de Uso
 
